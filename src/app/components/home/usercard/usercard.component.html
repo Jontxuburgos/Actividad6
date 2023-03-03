@@ -1,0 +1,11 @@
+<div class="card shadow p-2">
+  <div class="d-flex justify-content-around">
+    <figure>
+      <img class="img-thumbnail" [src]="miUser.image" [alt]="miUser.first_name" />
+    </figure>
+    <h3>{{ miUser.first_name }} {{ miUser.last_name }}</h3>
+  </div>
+  <button [routerLink]="['/user', miUser.id]" class="btn btn-warning">
+    Info
+  </button>
+</div>

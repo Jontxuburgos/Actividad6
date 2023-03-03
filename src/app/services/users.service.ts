@@ -7,7 +7,7 @@ import { lastValueFrom } from 'rxjs';
 })
 export class UsersService {
 
-  baseUrl: string = 'https://peticiones.online/api/users'
+  baseUrl: string = 'https://peticiones.online/api/users/'
 
   constructor(private httpClient: HttpClient) { }
 

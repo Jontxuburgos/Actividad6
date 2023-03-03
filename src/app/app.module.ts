@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { C404Component } from './components/c404/c404.component';
+import { UsercardComponent } from './components/home/usercard/usercard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    C404Component
+    C404Component,
+    UsercardComponent
   ],
   imports: [
     BrowserModule,
