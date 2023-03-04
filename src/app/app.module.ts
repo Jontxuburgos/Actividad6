@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { C404Component } from './components/c404/c404.component';
 import { UsercardComponent } from './components/home/usercard/usercard.component';
+import { UserViewComponent } from './components/home/user-view/user-view.component';
+import { FormComponent } from './components/form/form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     C404Component,
-    UsercardComponent
+    UsercardComponent,
+    UserViewComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

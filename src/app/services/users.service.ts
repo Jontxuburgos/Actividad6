@@ -7,11 +7,15 @@ import { lastValueFrom } from 'rxjs';
 })
 export class UsersService {
 
-  baseUrl: string = 'https://peticiones.online/api/users/'
+  private baseUrl: string = 'https://peticiones.online/api/users/'
 
   constructor(private httpClient: HttpClient) { }
 
   getAll(pPage: number = 1): Promise<any> {
     return lastValueFrom(this.httpClient.get<any>(`${this.baseUrl}?page=${pPage}`))
+  }
+
+  getById(pId: string) : Promise<any> {
+    return lastValueFrom(this.httpClient.get<any>(`${this.baseUrl}${pId}`))
   }
 }
