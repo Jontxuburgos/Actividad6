@@ -10,6 +10,6 @@
     Info
   </button>
   <button class="btn btn-info" [routerLink]="['/updateuser', miUser._id]">Actualizar</button>
-  <button class="btn btn-danger">Borrar</button>
+  <button class="btn btn-danger" (click)="deleteUser(miUser._id)">Borrar</button>
   </div>
 </div>

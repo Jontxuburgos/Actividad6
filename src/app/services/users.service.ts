@@ -27,4 +27,8 @@ export class UsersService {
   update(pUser:User) : Promise<User> {
     return lastValueFrom(this.httpClient.put<User>(`${this.baseUrl}${pUser._id}`, pUser))
   }
+
+  delete(pId:number) : Promise<any>{
+  return lastValueFrom(this.httpClient.delete<any>(`${this.baseUrl}${pId}`))
+  }
 }
