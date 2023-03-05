@@ -17,6 +17,7 @@
   <div>
     <label for="email" class="form-label">Email</label>
     <input class="form-control" type="text" id="email" formControlName="email" />
+    <p class="error" *ngIf="checkControl('email', 'required')">El campo es requerido</p>
   </div>
   <div>
     <label for="image" class="form-label">Foto de perfil</label>

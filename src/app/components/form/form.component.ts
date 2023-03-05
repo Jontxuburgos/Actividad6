@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
 import { User } from '../../interfaces/user.interface';
@@ -23,10 +23,22 @@ export class FormComponent implements OnInit {
   ) {
     this.userForm = new FormGroup(
       {
-        first_name: new FormControl('', []),
-        last_name: new FormControl('', []),
-        username: new FormControl('', []),
-        email: new FormControl('', []),
+        first_name: new FormControl('', [
+          Validators.required,
+          Validators.minLength(3)
+        ]),
+        last_name: new FormControl('', [
+          Validators.required,
+          Validators.minLength(3)
+        ]),
+        username: new FormControl('', [
+          Validators.required,
+          Validators.minLength(4)
+        ]),
+        email: new FormControl('', [
+          Validators.required,
+          Validators.pattern(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/)
+        ]),
         image: new FormControl('', []),
       },
       []
@@ -89,4 +101,13 @@ export class FormComponent implements OnInit {
       }
     }
   }
+
+  checkControl(pControlName: string, pError: string): boolean {
+    if (this.userForm.get(pControlName)?.hasError(pError) && this.userForm.get(pControlName)?.touched) {
+      return true
+    }
+    return false
+  }
+
+
 }
