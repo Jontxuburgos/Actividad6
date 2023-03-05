@@ -1,4 +1,5 @@
 <h1>{{ title }} usuario</h1>
+<app-notificaciones [msg]="msg" [type]="type"></app-notificaciones>
 <hr>
 <form novalidate [formGroup]="userForm" (ngSubmit)="getDataForm()">
   <div>

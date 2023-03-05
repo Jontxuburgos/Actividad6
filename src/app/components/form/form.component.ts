@@ -12,6 +12,9 @@ import { User } from '../../interfaces/user.interface';
 export class FormComponent implements OnInit {
   title: string = 'Registro';
   userForm: FormGroup;
+  msg:string = "";
+  type:string = "";
+
 
   constructor(
     private usersService: UsersService,
@@ -62,10 +65,10 @@ export class FormComponent implements OnInit {
       try {
         let response = await this.usersService.update(user);
         if (response.id) {
-          alert(
-            `usuario ${response.first_name} con id ${response.id} se ha actualizado correctamente`
-          );
-          this.router.navigate(['/home']);
+          this.msg = 
+            `usuario ${response.first_name} con id ${response.id} se ha actualizado correctamente`;
+            this.type = 'success'
+          // this.router.navigate(['/home']);
         }
       } catch (err) {
         console.log(err);
@@ -76,10 +79,10 @@ export class FormComponent implements OnInit {
       try {
         let response = await this.usersService.create(user);
         if (response.id) {
-          alert(
-            `usuario ${response.first_name} con id ${response.id} se ha creado correctamente`
-          );
-          this.router.navigate(['/home']);
+          this.msg = 
+            `usuario ${response.first_name} con id ${response.id} se ha creado correctamente`;
+            this.type = 'success'
+          // this.router.navigate(['/home']);
         }
       } catch (err) {
         console.log(err);

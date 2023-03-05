@@ -11,6 +11,7 @@ import { C404Component } from './components/c404/c404.component';
 import { UsercardComponent } from './components/home/usercard/usercard.component';
 import { UserViewComponent } from './components/home/user-view/user-view.component';
 import { FormComponent } from './components/form/form.component';
+import { NotificacionesComponent } from './components/notificaciones/notificaciones.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FormComponent } from './components/form/form.component';
     C404Component,
     UsercardComponent,
     UserViewComponent,
-    FormComponent
+    FormComponent,
+    NotificacionesComponent
   ],
   imports: [
     BrowserModule,

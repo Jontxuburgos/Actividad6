@@ -1,0 +1,4 @@
+<div [class]="'alert alert-dismissible fade alert-'+ type +' show'" [ngClass]="{'show':visible}" role="alert">
+    <p>{{notificacion}}</p>
+    <button type="button" class="btn-close" (click)="cerrar()"></button>
+  </div>
