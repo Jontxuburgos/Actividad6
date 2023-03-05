@@ -3,5 +3,11 @@
     <article class="col-12 col-md-6 col-lg-4" *ngFor="let user of arrUsers">
       <app-usercard [miUser]="user"></app-usercard>
     </article>
+    <nav class="d-flex justify-content-center" aria-label="Page navigation example">
+      <ul class="pagination mb-5">
+        <li class="page-item"><button class="page-link" (click)="gotoPage(currentPage - 1)" [disabled]="currentPage === 1">1</button></li>
+        <li class="page-item"><button class="page-link"(click)="gotoPage(currentPage + 1)" [disabled]="currentPage === totalPage">2</button></li>
+      </ul>
+    </nav>
   </div>
 </section>
