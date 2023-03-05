@@ -23,4 +23,8 @@ export class UsersService {
   create(pUser: User): Promise<User> {
   return lastValueFrom(this.httpClient.post<User>(this.baseUrl, pUser))
   }
+
+  update(pUser:User) : Promise<User> {
+    return lastValueFrom(this.httpClient.put<User>(`${this.baseUrl}${pUser._id}`, pUser))
+  }
 }
